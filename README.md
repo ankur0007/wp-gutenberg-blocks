@@ -14,11 +14,15 @@ a Product Card block with a Shopify product importer.
 Provides a prebuilt hero layout with a heading, paragraph, two buttons, and an
 image. Replace the placeholder content in the editor to create a page hero.
 
+![AVCL Hero Section block demo](assets/images/hero-section-demo.png)
+
 ### Related Posts
 
 Displays a grid of posts with featured images, titles, excerpts, and read-more
 links. Choose the post type and how many posts to show (1–10); the current post
 is excluded from the results.
+
+![AVCL Related Posts block demo](assets/images/related-posts-demo.png)
 
 ## Shopify product importer
 
