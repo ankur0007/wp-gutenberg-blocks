@@ -24,7 +24,7 @@ class SearchProductEndpoint extends Init
             'args' => [
                 'post_id' => [
                     'required' => true,
-                    'validate_callback' => (function (int $param): bool | WP_Error {
+                    'validate_callback' => (function (int $param) {
                         if (is_numeric($param) && get_post($param)) {
                             return true;
                         } else {
@@ -64,7 +64,7 @@ class SearchProductEndpoint extends Init
                 ],
                 'product_url' => [
                     'required' => true,
-                    'validate_callback' => (function (string $param, $request): bool | WP_Error {
+                    'validate_callback' => (function (string $param, $request) {
                         if (empty($param)) {
                             return new WP_Error('empty_url', 'Product URL can not be empty', ['status' => 400]);
                         }

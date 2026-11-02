@@ -40,21 +40,14 @@ restrict access, and custom storefront domains do not always map to their
 original myshopify.com domain. The importer cannot bypass authentication or
 storefront restrictions.
 
-== Adding a block ==
+== Development ==
 
-Create a new directory under src using the block slug, for example src/author-card/.
-Each block has its own block.json, index.js, edit.js, and render.php. Add save.js,
-view.js, and style/editor styles when needed. In index.js, register that block using
-its block.json metadata. Set its block name to avcl-blocks/<block-slug>.
-
-Run npm run build to compile all block directories and regenerate the metadata
-collection manifest. The plugin registers every block in build through that manifest.
-Run npm start during development to rebuild blocks when their source files change.
-
-The existing Related Posts block keeps its original registered name
-(create-block/avcl-related-posts) so posts already using it continue to load.
+Install dependencies with npm install, then run npm run build to compile the
+blocks. Run npm start to rebuild them while developing. See README.md for
+block usage, contribution instructions, and automated checks.
 
 == Changelog ==
 
 = 0.1.0 =
-* Initial AVCL Blocks collection with the Related Posts block.
+* Initial collection of Gutenberg blocks: Product Card with Shopify importer,
+  Hero Section, and Related Posts.

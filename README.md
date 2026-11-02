@@ -1,34 +1,42 @@
 # AVCL Blocks
 
-AVCL Blocks is a collection of custom Gutenberg blocks for WordPress, including
-a Product Card block with a Shopify product importer.
+[![Build](https://github.com/ankur0007/wp-gutenberg-blocks/actions/workflows/ci.yml/badge.svg)](https://github.com/ankur0007/wp-gutenberg-blocks/actions/workflows/ci.yml)
 
-## Product Card demo
+AVCL Blocks is a collection of Gutenberg blocks for building page layouts,
+showcasing products, and displaying related content.
 
-![AVCL Product Card block importing and displaying a Shopify product](assets/images/product-card-demo.png)
+## Blocks
 
-## Included blocks
+### Product Card
+
+Create a product card with an image, title, price, description, and button.
+Use the block toolbar's **Import product** control, paste an HTTPS Shopify
+product URL, and choose **Import**. The importer fills available product details
+and the primary image; the card's inner blocks can still be edited in WordPress.
+
+![Product Card block in the WordPress editor](assets/images/product-card-demo.png)
 
 ### Hero Section
 
-Provides a prebuilt hero layout with a heading, paragraph, two buttons, and an
-image. Replace the placeholder content in the editor to create a page hero.
+Start with a hero layout containing a heading, paragraph, two buttons, and an
+image. Replace the placeholder content and set the button labels, destinations,
+and image in the editor.
 
-![AVCL Hero Section block demo](assets/images/hero-section-demo.png)
+![Hero Section block in the WordPress editor](assets/images/hero-section-demo.png)
 
 ### Related Posts
 
-Displays a grid of posts with featured images, titles, excerpts, and read-more
-links. Choose the post type and how many posts to show (1–10); the current post
-is excluded from the results.
+Display a grid of posts with featured images, titles, excerpts, and links.
+Select the post type and choose how many posts to show (1–10) in the block
+settings. On a single post, the current post is excluded.
 
-![AVCL Related Posts block demo](assets/images/related-posts-demo.png)
+![Related Posts block in the WordPress editor](assets/images/related-posts-demo.png)
 
-## Shopify product importer
+*Screenshots show the blocks in the WordPress editor.*
 
-Paste a Shopify storefront product URL into the Product Card importer. It uses
-multiple retrieval methods to support products from a broad range of Shopify
-stores:
+## Shopify importer
+
+The Product Card importer tries several public storefront methods in sequence:
 
 1. Shopify's product `.js` endpoint.
 2. Shopify's product `.json` endpoint.
@@ -37,15 +45,13 @@ stores:
 4. A derived `{store-name}.myshopify.com` product URL, tried with `.js` and
    `.json`.
 
-The importer normalizes product details, including the title, description,
-price, vendor, category, image gallery, and variants. Imported product images
-and variant data are retained in the response for use by the block.
+Product details can include the title, description, price, vendor, category,
+image gallery, and variants.
 
-These methods use public storefront endpoints, whose availability is controlled
-by each store. Stores may block or restrict product data, and a custom domain
-does not always reveal the store's original `myshopify.com` domain. As a result,
-the importer supports many Shopify stores but cannot guarantee access to every
-store or bypass authentication and storefront restrictions.
+The importer uses public storefront endpoints. Storefronts may block or limit
+access, and a custom domain may not identify the store's original
+`myshopify.com` domain. It supports many Shopify stores, but cannot guarantee
+access to every store or bypass authentication and storefront restrictions.
 
 ## Requirements
 
@@ -54,25 +60,46 @@ store or bypass authentication and storefront restrictions.
 
 ## Installation
 
-1. Copy the `avcl-blocks` directory into `/wp-content/plugins/`.
-2. Activate **AVCL Blocks** from the WordPress Plugins screen.
-3. Add a Product Card or another AVCL block from the block inserter.
+1. Download the repository as a ZIP file (or clone it).
+2. Place the extracted repository directory in `/wp-content/plugins/`.
+3. Activate **AVCL Blocks** from the WordPress Plugins screen.
+4. Open a post or page, select **+** to open the block inserter, and search for
+   **Product Card**, **Hero Section**, or **AVCL Related Posts**.
 
-## Development
+## Development and checks
 
-Install the JavaScript dependencies and build the blocks:
+Requirements: Node.js 20+ and npm. Install dependencies, then build:
 
 ```sh
 npm install
 npm run build
 ```
 
-Use the development watcher while editing block source:
+Start the development watcher with:
 
 ```sh
 npm start
 ```
 
+The GitHub Actions workflow builds the blocks and checks PHP syntax on PHP 7.4
+and PHP 8.3. Before opening a pull request, run:
+
+```sh
+npm run build
+find . -type f -name '*.php' ! -path './vendor/*' ! -path './node_modules/*' -print0 | xargs -0 -n 1 php -l
+```
+
+## Contributing
+
+Bug reports and feature requests are welcome through
+[GitHub Issues](https://github.com/ankur0007/wp-gutenberg-blocks/issues).
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
-GPL-2.0-or-later, as declared in `avcl-blocks.php`.
+AVCL Blocks is licensed under the GNU General Public License, version 2 or (at
+your option) any later version. See [LICENSE](LICENSE).
