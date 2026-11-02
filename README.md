@@ -5,6 +5,12 @@
 AVCL Blocks is a collection of Gutenberg blocks for building page layouts,
 showcasing products, and displaying related content.
 
+## Front-end demo
+
+See the blocks together as visitors see them on the front end:
+
+![Front-end preview of the Product Card, Hero Section, and Related Posts blocks](assets/images/frontend-blocks-demo.jpg)
+
 ## Blocks
 
 ### Product Card
@@ -14,13 +20,17 @@ Use the block toolbar's **Import product** control, paste an HTTPS Shopify
 product URL, and choose **Import**. The importer fills available product details
 and the primary image; the card's inner blocks can still be edited in WordPress.
 
-![Product Card block in the WordPress editor](assets/images/product-card-demo.png)
+*Editor preview:*
+
+![Product Card importer in the WordPress editor](assets/images/product-card-demo.png)
 
 ### Hero Section
 
 Start with a hero layout containing a heading, paragraph, two buttons, and an
 image. Replace the placeholder content and set the button labels, destinations,
 and image in the editor.
+
+*Editor preview:*
 
 ![Hero Section block in the WordPress editor](assets/images/hero-section-demo.png)
 
@@ -30,9 +40,9 @@ Display a grid of posts with featured images, titles, excerpts, and links.
 Select the post type and choose how many posts to show (1–10) in the block
 settings. On a single post, the current post is excluded.
 
-![Related Posts block in the WordPress editor](assets/images/related-posts-demo.png)
+*Editor preview:*
 
-*Screenshots show the blocks in the WordPress editor.*
+![Related Posts block in the WordPress editor](assets/images/related-posts-demo.png)
 
 ## Shopify importer
 
