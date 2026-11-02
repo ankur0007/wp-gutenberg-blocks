@@ -1,0 +1,93 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-avcl-related-posts {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+
+.avcl-related-posts {
+	width: 100%;
+	margin-block: 2rem;
+}
+
+.avcl-related-posts__grid {
+	display: grid;
+	grid-template-columns: repeat(var(--avcl-columns, 3), minmax(0, 1fr));
+	gap: 1.5rem;
+}
+
+.avcl-related-posts__card {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	overflow: hidden;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	background: #fff;
+}
+
+.avcl-related-posts__image-link {
+	display: block;
+	overflow: hidden;
+	aspect-ratio: 3 / 2;
+	background: #f3f4f6;
+}
+
+.avcl-related-posts__image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.avcl-related-posts__content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1.25rem;
+}
+
+.avcl-related-posts__title {
+	margin: 0 0 0.75rem;
+	font-size: 1.2rem;
+	line-height: 1.4;
+	overflow-wrap: anywhere;
+}
+
+.avcl-related-posts__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.avcl-related-posts__excerpt {
+	margin: 0 0 1.25rem;
+	color: #525866;
+	font-size: 0.95rem;
+	line-height: 1.65;
+}
+
+.avcl-related-posts__link {
+	margin-top: auto;
+	color: #2457c5;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+@media (max-width: 900px) {
+	.avcl-related-posts__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.avcl-related-posts__grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

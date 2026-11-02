@@ -1,0 +1,15 @@
+.avcl-product-card__import-popover {
+	width: 380px;
+	max-width: calc(100vw - 32px);
+	padding: 16px;
+	box-sizing: border-box;
+
+	.components-base-control,
+	.components-text-control__input {
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.avcl-import-error{
+		color: red;
+	}
+}

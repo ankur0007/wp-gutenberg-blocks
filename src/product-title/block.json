@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "avcl/product-title",
+	"title": "Product Title",
+	"category": "widgets",
+	"attributes": {},
+	"textdomain": "avcl-blocks",
+	"ancestor": [ "avcl/product-card" ],
+	"editorScript": "file:./index.js",
+	"usesContext": [ "avcl/productName" ],
+	"render": "file:./render.php"
+}

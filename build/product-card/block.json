@@ -1,0 +1,64 @@
+{
+  "apiVersion": 3,
+  "name": "avcl/product-card",
+  "title": "Product Card",
+  "category": "widgets",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "allowedBlocks": [
+    "core/image",
+    "core/group",
+    "avcl/product-title",
+    "avcl/product-price",
+    "avcl/product-description",
+    "core/buttons"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "productName": {
+      "type": "string",
+      "default": "Headphones"
+    },
+    "price": {
+      "type": "number",
+      "default": 99
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": "https://via.placeholder.com/300x200"
+    },
+    "position": {
+      "type": "string",
+      "default": "left"
+    },
+    "description": {
+      "type": "string",
+      "default": "This is a great product that you will love!"
+    },
+    "cardWidth": {
+      "type": "number",
+      "default": 512
+    },
+    "currency": {
+      "type": "string",
+      "default": "$"
+    },
+    "productUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "platform": {
+      "type": "string",
+      "default": "shopify"
+    }
+  },
+  "providesContext": {
+    "avcl/productName": "productName",
+    "avcl/price": "price",
+    "avcl/description": "description",
+    "avcl/currency": "currency"
+  }
+}

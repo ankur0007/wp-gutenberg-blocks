@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "avcl/product-price",
+	"title": "Product Price",
+	"category": "widgets",
+	"textdomain": "avcl-blocks",
+	"ancestor": [ "avcl/product-card" ],
+	"editorScript": "file:./index.js",
+	"usesContext": [ "avcl/price", "avcl/currency" ],
+	"supports": {
+		"typoraphy": {
+			"fontSize": true
+		}
+	},
+	"render": "file:./render.php"
+}

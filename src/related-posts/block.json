@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/avcl-related-posts",
+	"version": "0.1.0",
+	"title": "AVCL Related Posts",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Displays a configurable list of related posts.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "avcl-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"postsToShow": {
+			"type": "number",
+			"default": 3
+		},
+		"postType": {
+			"type": "string",
+			"default": "post"
+		},
+		"taxonomy": {
+			"type": "string",
+			"default": "category"
+		},
+		"terms": {
+			"type": "array",
+			"default": []
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		}
+	},
+	"render": "file:./render.php"
+}

@@ -1,0 +1,12 @@
+{
+	"name": "avcl/blocks",
+	"type": "wordpress-plugin",
+	"autoload": {
+		"psr-4": {
+			"AVCL\\Blocks\\": [
+				"helpers/",
+				"includes/"
+			]
+		}
+	}
+}

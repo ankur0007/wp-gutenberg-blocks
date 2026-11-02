@@ -1,0 +1,150 @@
+/* ==========================================================================
+   WordPress Top-Level Layout Grid Fix
+   ========================================================================== */
+
+.avcl-hero {
+	background: #ffffff;
+	padding: 100px 40px;
+	width: 100%;
+	box-sizing: border-box;
+
+	/* Forces layout grid directly onto the parent block wrapper */
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	align-items: center;
+	gap: 64px;
+	max-width: 1400px;
+	margin: 0 auto;
+
+	/* ----------------------------------------------------------------------
+	   Left-Side Alignment Layout (Text, Paragraph, Buttons Container)
+	   ---------------------------------------------------------------------- */
+	
+	/* Groups title, paragraph, and buttons cleanly inside the grid flow */
+	.wp-block-heading,
+	.wp-block-paragraph,
+	.wp-block-buttons {
+		grid-column: 1; /* Locks text components strictly to the left side */
+	}
+
+	/* Title Block */
+	.wp-block-heading {
+		font-family: 'Inter', system-ui, -apple-system, sans-serif;
+		font-size: clamp(2.5rem, 4.2vw, 4.25rem);
+		font-weight: 700;
+		line-height: 1.1;
+		color: #0b1b3d;
+		margin-top: 0;
+		margin-bottom: 32px;
+		letter-spacing: -0.015em;
+	}
+
+	/* Supporting Text Paragraph */
+	.wp-block-paragraph {
+		font-family: 'Inter', system-ui, -apple-system, sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.6;
+		color: #2b3a57;
+		margin-top: 0;
+		margin-bottom: 40px;
+		max-width: 580px;
+	}
+
+	/* Buttons Flex Container Wrapper */
+	.wp-block-buttons {
+		display: flex;
+		gap: 16px;
+		margin: 0;
+
+		.wp-block-button {
+			.wp-block-button__link {
+				font-family: 'Inter', system-ui, -apple-system, sans-serif;
+				font-size: 1rem;
+				font-weight: 600;
+				padding: 18px 36px;
+				text-decoration: none;
+				border-radius: 2px;
+				transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+				box-sizing: border-box;
+				display: inline-block;
+			}
+
+			/* Left Button Variant: Solid Fill ("Explore Our Work") */
+			&:first-child .wp-block-button__link {
+				background-color: #0b1b3d;
+				color: #ffffff;
+				border: 2px solid #0b1b3d;
+
+				&:hover {
+					background-color: #1a2c54;
+					border-color: #1a2c54;
+				}
+			}
+
+			/* Right Button Variant: Transparent Outlined Outline ("Contact Us") */
+			&:last-child .wp-block-button__link {
+				background-color: transparent;
+				color: #0b1b3d;
+				border: 2px solid #0b1b3d;
+
+				&:hover {
+					background-color: #f5f7fa;
+				}
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	   Right-Side Alignment Layout (Studio Image Component)
+	   ---------------------------------------------------------------------- */
+
+	/* Image Block Component Styles */
+	.wp-block-image {
+		grid-column: 2;   /* Forces the picture block to live on the right column */
+		grid-row: 1 / 4; /* Spans the image vertically next to all three text tiers */
+		margin: 0;
+		width: 100%;
+		
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			object-fit: cover;
+			border-radius: 2px;
+			box-shadow: 0 12px 32px rgba(11, 27, 61, 0.05);
+		}
+	}
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for Tablets & Mobile Viewports
+   ========================================================================== */
+@media (max-width: 991px) {
+	.avcl-hero {
+		grid-template-columns: 1fr; /* Switch to a clean single vertical stack layout */
+		gap: 32px;
+		padding: 60px 24px;
+
+		/* Reset all components back into a unified vertical flow order */
+		.wp-block-heading,
+		.wp-block-paragraph,
+		.wp-block-buttons,
+		.wp-block-image {
+			grid-column: auto;
+			grid-row: auto;
+		}
+
+		/* Pushes the studio image to the very top layout position on mobile */
+		.wp-block-image {
+			order: -1; 
+		}
+
+		.wp-block-heading {
+			margin-bottom: 24px;
+		}
+
+		.wp-block-paragraph {
+			margin-bottom: 32px;
+		}
+	}
+}
