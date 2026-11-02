@@ -3,6 +3,10 @@
 AVCL Blocks is a collection of custom Gutenberg blocks for WordPress, including
 a Product Card block with a Shopify product importer.
 
+## Product Card demo
+
+![AVCL Product Card block importing and displaying a Shopify product](assets/images/product-card-demo.png)
+
 ## Shopify product importer
 
 Paste a Shopify storefront product URL into the Product Card importer. It uses
