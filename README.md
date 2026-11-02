@@ -7,6 +7,19 @@ a Product Card block with a Shopify product importer.
 
 ![AVCL Product Card block importing and displaying a Shopify product](assets/images/product-card-demo.png)
 
+## Included blocks
+
+### Hero Section
+
+Provides a prebuilt hero layout with a heading, paragraph, two buttons, and an
+image. Replace the placeholder content in the editor to create a page hero.
+
+### Related Posts
+
+Displays a grid of posts with featured images, titles, excerpts, and read-more
+links. Choose the post type and how many posts to show (1–10); the current post
+is excluded from the results.
+
 ## Shopify product importer
 
 Paste a Shopify storefront product URL into the Product Card importer. It uses

@@ -18,6 +18,15 @@ URL. Storefront restrictions vary, so access cannot be guaranteed for every stor
 2. Activate AVCL Blocks from the Plugins screen.
 3. Add a Product Card or another AVCL block from the block inserter.
 
+== Included blocks ==
+
+Hero Section provides a prebuilt hero layout with a heading, paragraph, two
+buttons, and an image. Replace its placeholder content in the editor.
+
+Related Posts displays a grid of posts with featured images, titles, excerpts,
+and read-more links. Choose the post type and number of posts to show (1 to 10);
+the current post is excluded from the results.
+
 == Shopify product importer ==
 
 Paste a Shopify product URL into the Product Card importer. It tries the
